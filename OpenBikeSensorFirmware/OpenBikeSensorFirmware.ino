@@ -39,6 +39,10 @@ SSD1306DisplayDevice* displayTest;
 
 HCSR04SensorManager* sensorManager;
 
+#ifdef BLUETOOTH_ACTIVATED
+BluetoothManager* bluetoothManager;
+#endif
+
 String esp_chipid;
 
 // --- Local variables ---
@@ -144,6 +148,14 @@ void setup() {
   //##############################################################
 
   SerialGPS.begin(9600, SERIAL_8N1, 16, 17);
+
+  //##############################################################
+  // Bluetooth
+  //##############################################################
+#ifdef BLUETOOTH_ACTIVATED
+  bluetoothManager->init();
+  bluetoothManager->activateBluetooth();
+#endif
 
   //##############################################################
   // Check, if the button is pressed
@@ -321,6 +333,10 @@ void loop() {
       sensorManager->m_sensors[1],
       sensorManager->m_sensors[0]
     );
+
+#ifdef BLUETOOTH_ACTIVATED
+    bluetoothManager->newSensorValue(sensorManager->sensorValues[confirmationSensorID]);
+#endif
 
     // #######################################################
     // Stoarge

@@ -37,3 +37,5 @@ extern String esp_chipid;
 #endif
 
 #define MAX_SENSOR_VALUE 255
+
+#define BLUETOOTH_ACTIVATED
