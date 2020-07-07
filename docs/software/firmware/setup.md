@@ -1,4 +1,11 @@
-# Setup your Development Environment
+---
+layout: default
+title: Setup Development Environment
+parent: Firmware
+grand_parent: Software
+---
+
+# Setup Development Environment
 
 ## [VSCode](https://code.visualstudio.com/)
 <a name="vscode"></a>

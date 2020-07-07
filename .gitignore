@@ -11,3 +11,11 @@ cmake-build-*/
 custom_config.ini
 !custom_config.ini.example
 .DS_Store
+
+# jekyll
+docs/_site
+docs/.sass-cache
+docs/.jekyll-cache
+docs/.jekyll-metadata
+docs/vendor
+
